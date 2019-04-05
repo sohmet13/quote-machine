@@ -1,0 +1,27 @@
+{
+  "name": "quote-machine-master",
+  "version": "1.0.0",
+  "description": "The project shows a quote machine. Made with the usage of JQuery.",
+  "main": "src/script.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack --watch"
+  },
+  "author": "Anna Loshchakova",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.3.1",
+    "jquery-ui": "^1.12.1",
+    "webpack": "^4.29.6"
+  },
+  "devDependencies": {
+    "css-loader": "^2.1.1",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack-cli": "^3.3.0"
+  }
+}
