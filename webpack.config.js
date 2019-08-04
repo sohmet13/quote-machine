@@ -1,17 +1,8 @@
 const path = require('path');
-// const webpack = require("webpack");
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
-const VENDOR_LIBS = ['jquery-ui'];
 
 module.exports = {
     mode: 'development',
     entry: './src/script.js',
-    // optimization: {
-    //     splitChunks: {
-    //         chunks: "all"
-    //     }
-    // },
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
@@ -19,15 +10,23 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.scss$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: ['css-loader', 'sass-loader']
-                })
-            }
-        ]
-    },
-    plugins: [
-        new ExtractTextPlugin('style.css'),
-    ]
+                test: /\.(scss)$/,
+                use: [
+                    {loader: 'style-loader' /* Adds CSS to the DOM by injecting a `<style>` tag*/},
+                    {loader: 'css-loader' /* Interprets `@import` and `url()` like `import/require()` and will resolve them */},
+                    {
+                        loader: 'postcss-loader' /* Loader for webpack to process CSS with PostCSS*/,
+                        options: {
+                            plugins: function () {
+                                return [
+                                    require('autoprefixer')
+                                ];
+                            }
+                        }
+                    },
+                    {loader: 'sass-loader' /* Loads a SASS/SCSS file and compiles it to CSS */}
+                ]
+            },
+        ],
+    }
 };

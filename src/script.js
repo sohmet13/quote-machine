@@ -1,7 +1,9 @@
 ﻿import $ from 'jquery';
-// import 'bootstrap';
-import 'jquery-ui';
-// import './node_modules/font-awesome/scss/font-awesome'
+import 'jquery-ui-bundle';
+import '@fortawesome/fontawesome-free/js/fontawesome';
+import '@fortawesome/fontawesome-free/js/solid';
+import '@fortawesome/fontawesome-free/js/regular';
+import '@fortawesome/fontawesome-free/js/brands';
 
 import './style.scss';
 
@@ -32,14 +34,14 @@ function getData() {
             Accept: 'application/json'
         },
         url: 'https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json',
-        success: function (data) {
+        success: (data) => {
             if (typeof data === 'string') {
                 quotes = JSON.parse(data);
             }
             quotes = quotes.quotes;
             displayQuote();
         },
-        error: function (jqXHR, exception) {
+        error: (jqXHR, exception) => {
             switch (true) {
                 case jqXHR.status === 0:
                     alertError('Not connect.\n Verify Network.');
@@ -94,10 +96,7 @@ function animation() {
     });
     // анимируем цвета
     let getRandomColor = generateRandomColor();
-    $('.button, body').animate(
-        {backgroundColor: getRandomColor},
-        1000
-    );
+    $('.button, body').animate({backgroundColor: getRandomColor}, 1000);
     $('.thumbnail').animate({color: getRandomColor}, 1000);
 }
 
