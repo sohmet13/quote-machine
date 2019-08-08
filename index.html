@@ -1,24 +1,27 @@
 <!DOCTYPE html>
-
 <html>
-  <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
-    <script src="script.js"></script>
-  </head>
+<head>
+    <script type="text/javascript" src="dist/bundle.js" charset="utf-8"></script>
+</head>
 
- <body class='container-fluid'>
-   <div class ='thumbnail text-center'>
-     <h1><i class="fa fa-quote-left"></i> <span id='quote'></span></h1>
-     <p id='author'>- <span id='name'></span></p>
-     <div>
-      <a id='twitterShare' target="_blank" class='button' title="Tweet this quote!"><i class="fa fa-twitter fa-2x"></i></a>
-      <a id='facebookShare' target="_blank" class='button' title="Share this quote!"><i class="fa fa-facebook fa-2x"></i></a>
-      <div id='newQuote'><p>New quote</p></div>
-     </div>
-   </div>
+<body>
+<div class="thumbnail">
+    <h1>
+        <i class="fa fa-quote-left"></i>
+        <span class="quote"></span>
+    </h1>
+    <p class="author">- <span class="name"></span></p>
+    <div class="buttons">
+        <div class="share-buttons">
+            <a target="_blank" class="button share-button twitter" title="Tweet this quote!">
+                <i class="fab fa-twitter fa-2x"></i>
+            </a>
+            <a target="_blank" class="button share-button facebook" title="Share this quote!">
+                <i class="fab fa-facebook-f fa-2x"></i>
+            </a>
+        </div>
+        <div class="button new-quote-button">New quote</div>
+    </div>
+</div>
 </body>
 </html>

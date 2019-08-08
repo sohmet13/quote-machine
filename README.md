@@ -1,5 +1,8 @@
 # Quote-machine
-The project shows a quote machine. Made with the usage of JQuery.
+The project shows a quote machine. Made with JQuery.
 
-The project is available on CodePen.
-https://codepen.io/sohmet13/full/baQLdw/
+Work in:
+1. Google Chrome 75.0.3770.142 +
+2. Opera 62.0.3331.99 +
+3. Firefox 67.0.4 +
+4. Microsoft Edge 42.17134.1.0 +
